@@ -132,4 +132,12 @@ def universe_quiz():
     summary()
 
 if __name__ == "__main__":
-    universe_quiz()
+    playing = True
+    while playing:
+        universe_quiz()
+        play_again = input("Would you like to retake this quiz? Enter y or n\n".lower())
+        if play_again == "y":
+            questions_wrong = []
+            total_score = 0
+        else:
+            playing = False
