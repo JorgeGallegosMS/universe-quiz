@@ -3,7 +3,6 @@ num_response = "Please enter a whole number"
 true_or_false = "Please enter 1 for true and 0 for false"
 
 questions_wrong = []
-
 total_score = 0
 
 def correct_answer():
@@ -85,14 +84,52 @@ def question4():
         print(f"{guess} is not a valid option. Try again\n")
         question4()
 
-def quiz():
+def question5():
+    question = "True or False: Jupiter is the largest planet in our solar system"
+    answer = "1"
+
+    print(f"{question} - {true_or_false}")
+
+    guess = input()
+
+    if guess == answer:
+        correct_answer()
+    else:
+        wrong_answer(5, answer)
+
+def question6():
+    question = "True of False: There are 1 trillion stars in the Andromeda "
+    answer = "1"
+
+    print(f"{question} - {true_or_false}")
+
+    guess = input()
+
+    if guess == answer:
+        correct_answer()
+    else:
+        wrong_answer(6, answer)
+
+def summary():
+    print("Quiz Summary:")
+    print(f"You got {total_score}/6 answers right")
+    print(f"Questions you got wrong: {', '.join(questions_wrong)}")
+    if total_score <= 2:
+        print("Nice try, but you can do better")
+    elif total_score < 4:
+        print("You seem to know a bit about the universe")
+    else:
+        print("You know the universe pretty well")
+
+def universe_quiz():
+    print("Quiz time! Let's test your knowledge of the universe\n")
     question1()
     question2()
     question3()
     question4()
+    question5()
+    question6()
+    summary()
 
 if __name__ == "__main__":
-    quiz()
-
-print(questions_wrong)
-print(total_score)
+    universe_quiz()
